@@ -1,0 +1,91 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    tools:context=".Home">
+
+    <!-- Main Content Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Home Logo -->
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="64dp"
+                android:src="@drawable/home_logo"
+                android:scaleType="centerCrop"
+                android:importantForAccessibility="no" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Profile Picture -->
+            <ImageButton
+                android:id="@+id/profile_image_view"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle_border"
+                android:src="@drawable/person" />
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/search_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp"
+            android:background="@drawable/solid_border"
+            android:drawableEnd="@drawable/search"
+            android:hint="Search created quizzes..."
+            android:textColorHint="@color/dark_gray"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+
+        <!-- RecyclerView for quizzes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/quizzes_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom-Right Create Button -->
+    <ImageButton
+        android:id="@+id/create_btn"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/create_btn"
+        android:layout_gravity="bottom|end"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+</FrameLayout>
